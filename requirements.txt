@@ -1,0 +1,11 @@
+# Core dependencies
+langchain
+langchain-community
+langchain-core
+sentence-transformers
+faiss-cpu
+ipywidgets
+huggingface_hub
+transformers
+langchain_groq
+streamlit 
