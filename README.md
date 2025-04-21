@@ -23,6 +23,37 @@ This project is focused on building a restaurant-aware AI chatbot for **Kanpur**
 
 ---
 
+## 📊 Data Collection & Preprocessing
+
+- Data scraped using `Selenium` from:
+  - **Zomato**: 10 restaurants → stored in `restaurants.csv`
+  - **Swiggy**: 90 restaurants → stored in `restaurants_swiggy.csv`
+
+- Columns in each CSV:
+  - `Restaurant Name`, `Location`, `Contact`, `Menu`, `Cuisine`, `Price`, `"Ratings(Dining, Delivery)"`, `Operating Hours`, `More Info`
+
+- Merged the two CSVs → `merged.csv`
+
+- **Menu column** contains image links.
+  - Used **OCR** to extract text from menu images.
+  - Extracted menu text is stored in a new column: `menu_text`
+  - OCR code available in `rag.ipynb`
+
+---
+
+## 🔧 Files Overview
+
+| File                         | Purpose                                            |
+|------------------------------|----------------------------------------------------|
+| `Restaurants_scraper.py`     | Zomato data scraper using Selenium                |
+| `Restaurants_scraper_swiggy.py` | Swiggy data scraper using Selenium             |
+| `rag.ipynb`                  | OCR pipeline + VectorStore creation + testing     |
+| `rag.py`                     | Final RAG logic + chatbot interface               |
+| `app.py`                     | Streamlit App file                                |
+| `merged.csv`                 | Combined & preprocessed data (with OCR text)      |
+
+---
+
 ## 🧠 Architecture & Workflow
 
 
@@ -67,8 +98,8 @@ A conversational assistant to help you find restaurants, compare menus, and get 
 ## 🗂 Project Structure
 
 ```
-📁 your-repo/
-├── merged.csv        # Combined restaurant data with menu text
+📁 RAG/
+├── merged_data.csv        # Combined restaurant data with menu text
 ├── rag.py            # Final Streamlit app
 ├── rag.ipynb         # Development notebook
 ├── .env              # Optional Groq API keys
@@ -108,8 +139,8 @@ Each query is routed to a separate **LangChain pipeline** using a **stuff chain*
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/zomato-rag-chatbot.git
-cd zomato-rag-chatbot
+git clone https://github.com/Shivang004/RAG.git
+cd RAG
 ```
 ### 2. Install Requirements
 ```bash
@@ -124,17 +155,17 @@ echo "GROQ_API_KEY=your_groq_api_key_here" > .env
 ```
 
 ### 4. Run the App
-bash```
+```bash
 streamlit run rag.py
 ```
 The app will open in your browser at http://localhost:8501
 
 ### ✨ Features
-💬 Natural language chat interface
-📋 Real-time menu data retrieval using OCR
-⚖️ Restaurant comparison tool
-🥗 Smart dietary recommendations (vegan, low-calorie, etc.)
-⚡ Fast, efficient responses using RAG + LLaMA3-8B
+- 💬 Natural language chat interface
+-  Intent Classification
+- ⚖️ Restaurant comparison tool
+- 🥗 Smart dietary recommendations (vegan, low-calorie, etc.)
+- ⚡ Fast, efficient responses using RAG + LLaMA3-8B
 
 ### 🖼 App Screenshot
 
