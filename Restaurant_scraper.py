@@ -23,7 +23,7 @@ try:
     # Get the first restaurant card link
     divs = driver.find_elements(By.CSS_SELECTOR, '.sc-evWYkj.cRThYq')[:10]
     links = []
-
+    
     for div in divs:
         try:
             element = div.find_element(By.CSS_SELECTOR, "a.sc-hqGPoI.kCiEKB")
@@ -31,7 +31,7 @@ try:
             links.append(link)
         except:
             print("Link not found")
-
+    print(links)    
     # Write to CSV
     with open('restaurants.csv', 'w', newline='', encoding='utf-8-sig') as file:
         writer = csv.writer(file)
