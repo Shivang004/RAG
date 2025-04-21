@@ -44,3 +44,16 @@ graph TD
     F --> G[Streamlit UI]
 
 ```
+
+### 🛠 Technologies Used
+
+| Task                        | Tool/Library                       |
+|-----------------------------|------------------------------------|
+| Web Scraping                | Selenium                           |
+| OCR                         | Tesseract, `pytesseract`           |
+| Embeddings                  | `HuggingFaceEmbeddings`            |
+| Vector DB                   | FAISS                              |
+| LLM Inference               | LangChain, Groq, LLaMA3-8B         |
+| App Framework               | Streamlit                          |
+| Prompt Engineering & RAG   | LangChain                          |
+| CSV Parsing & Merging      | `pandas`                           |
