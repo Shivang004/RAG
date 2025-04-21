@@ -24,6 +24,7 @@ This project is focused on building a restaurant-aware AI chatbot for **Kanpur**
 ---
 
 Demo Video Link: https://drive.google.com/file/d/10fKT8UB_VAoHdFuTQ4_N4KXZ0JB0oAOz/view?usp=sharing
+Deployed App Link: https://zta3nurmcthvctmvaaedjv.streamlit.app/
 
 ## 📊 Data Collection & Preprocessing
 
