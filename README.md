@@ -64,44 +64,42 @@ Copy code
 
 A conversational assistant to help you find restaurants, compare menus, and get dietary suggestions — powered by **LangChain**, **Streamlit**, and **Groq's LLaMA3-8B**.
 
----
-
 ## 🗂 Project Structure
 
+```
 📁 your-repo/
-├── merged.csv # Combined restaurant data with menu text
-├── rag.py # Final Streamlit app
-├── rag.ipynb # Development notebook
-├── .env # Optional Groq API keys
+├── merged.csv        # Combined restaurant data with menu text
+├── rag.py            # Final Streamlit app
+├── rag.ipynb         # Development notebook
+├── .env              # Optional Groq API keys
 ├── requirements.txt
 └── README.md
+```
 
-
----
 
 ## 💡 Intent Routing Logic
 
-The chatbot handles 4 types of queries using keyword-based classification:
+The chatbot supports 4 types of queries, identified using keyword-based classification:
 
-- **qa**  
+- **qa**:  
   _Examples_:  
-  - “What are some Chinese restaurants?”  
-  - “Show me options near IIT”
+  - "What are some Chinese restaurants?"  
+  - "Show me options near IIT"
 
-- **comparison**  
+- **comparison**:  
   _Examples_:  
-  - “Compare KFC and Burger King”  
-  - “Which is cheaper?”
+  - "Compare KFC and Burger King"  
+  - "Which is cheaper?"
 
-- **diet**  
+- **diet**:  
   _Examples_:  
-  - “Suggest vegan dishes”  
-  - “I want low-calorie meals”
+  - "Suggest vegan dishes"  
+  - "I want low-calorie meals"
 
-- **fallback**  
-  For unclear or out-of-scope queries.
+- **fallback**:  
+  Used for unclear or out-of-scope queries
 
-> Each query type is routed to a dedicated LangChain pipeline using custom prompt templates.
+Each query is routed to a separate **LangChain pipeline** using a **stuff chain** with custom prompt templates.
 
 ---
 
@@ -112,39 +110,35 @@ The chatbot handles 4 types of queries using keyword-based classification:
 ```bash
 git clone https://github.com/yourusername/zomato-rag-chatbot.git
 cd zomato-rag-chatbot
-2. Install Requirements
-bash
-Copy code
+```
+### 2. Install Requirements
+```bash
 pip install -r requirements.txt
-3. Setup Environment
+```
+
+### 3. Setup Environment
 Add your GROQ API key to a .env file:
 
-bash
-Copy code
+```bash
 echo "GROQ_API_KEY=your_groq_api_key_here" > .env
-Install Tesseract OCR (for extracting text from menus):
+```
 
-bash
-Copy code
-# Linux
-sudo apt install tesseract-ocr
-
-# macOS (Homebrew)
-brew install tesseract
-4. Run the App
-bash
-Copy code
+### 4. Run the App
+bash```
 streamlit run rag.py
+```
 The app will open in your browser at http://localhost:8501
 
-✨ Features
+### ✨ Features
 💬 Natural language chat interface
 📋 Real-time menu data retrieval using OCR
 ⚖️ Restaurant comparison tool
 🥗 Smart dietary recommendations (vegan, low-calorie, etc.)
 ⚡ Fast, efficient responses using RAG + LLaMA3-8B
-🖼 App Screenshot
-<!-- You can add a screenshot image here --> <!-- ![Screenshot](screenshot.png) -->
-🤝 Credits
+
+### 🖼 App Screenshot
+
+
+### 🤝 Credits
 Built with ❤️ by Shivang
 
