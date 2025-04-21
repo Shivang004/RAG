@@ -1,6 +1,6 @@
-# 🍽️ Zomato x Swiggy RAG Chatbot – GenAI Internship Assignment
+# 🍽️ Restaurant Data Scraper & RAG-based Chatbot
 
-This project is part of the **Zomato Gen AI Internship Assignment**, focused on building a restaurant-aware AI chatbot for **Kanpur**. It integrates **web scraping**, **OCR**, **RAG-based LLM inference**, **intent classification**, and a sleek **Streamlit UI** to answer natural language queries about food and restaurants using real-time menu data from **Zomato** and **Swiggy**.
+This project is focused on building a restaurant-aware AI chatbot for **Kanpur**. It integrates **web scraping**, **OCR**, **RAG-based LLM inference**, **intent classification**, and a sleek **Streamlit UI** to answer natural language queries about food and restaurants using real-time menu data from **Zomato** and **Swiggy**.
 
 ---
 
@@ -39,3 +39,4 @@ graph TD
     D --> E[Retrieve Relevant Menu Chunks]
     E --> F[LLM Response (Groq LLaMA3)]
     F --> G[Streamlit UI]
+```
