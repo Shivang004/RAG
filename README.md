@@ -56,25 +56,8 @@ This project is focused on building a restaurant-aware AI chatbot for **Kanpur**
 
 ## 🧠 Architecture & Workflow
 
+![Workflow](Workflow.png)
 
-```mermaid
-graph TD
-    A[User Query] --> B[Intent Classification]
-    B --> C1[QA Chain]
-    B --> C2[Comparison Chain]
-    B --> C3[Diet Chain]
-    B --> C4[Fallback Chain]
-    
-    C1 --> D[Query FAISS Vector DB]
-    C2 --> D
-    C3 --> D
-    C4 --> D
-
-    D --> E[Retrieve Menu Chunks]
-    E --> F[LLM (Groq LLaMA3)]
-    F --> G[Streamlit UI]
-
-```
 
 ## 🛠 Technologies Used
 
@@ -163,11 +146,15 @@ The app will open in your browser at http://localhost:8501
 ### ✨ Features
 - 💬 Natural language chat interface
 -  Intent Classification
+-  Maintains Chat history and gives results based on it
 - ⚖️ Restaurant comparison tool
 - 🥗 Smart dietary recommendations (vegan, low-calorie, etc.)
 - ⚡ Fast, efficient responses using RAG + LLaMA3-8B
+- Fallback mechanism to handle out of domain questions
 
 ### 🖼 App Screenshot
+
+![App Demo](demo.png)
 
 
 ### 🤝 Credits
